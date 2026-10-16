@@ -1,0 +1,4 @@
+# Generated secrets and runtime state; never commit
+.env
+run/
+logs/
