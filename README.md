@@ -13,6 +13,29 @@ They expect the service repositories next to this folder (`../userservice`, `../
 
 Logs: `logs/<component>.log`. Process ids: `run/`.
 
+## Getting the code
+
+Clone every repository side by side, using these folder names (the scripts expect them):
+
+```bash
+mkdir Capstone && cd Capstone
+G=https://github.com/pavithrakudethurscaler
+git clone $G/platform.git             platform
+git clone $G/UserService.git          userservice
+git clone $G/ProductService.git       productservice
+git clone $G/OrderService.git         orderservice
+git clone $G/PaymentService.git       paymentservice
+git clone $G/CartService-.git         cartservice
+git clone $G/NotificationService.git  notificationservice
+git clone $G/ApiGatewayService.git    apigateway
+git clone $G/KafkaService.git         kafkaservice
+git clone $G/elasticsearchservice.git elasticsearchservice
+```
+
+MongoDB is not in a repository: unzip the MongoDB 8.0 Windows zip into `tools/` (so that
+`tools/mongodb-win32-x86_64-windows-*/bin/mongod.exe` exists) and add `tools/start-mongodb.sh`, or point the Cart
+Service at another MongoDB with `MONGODB_URI`. Java 21 is required for the services.
+
 ## First run
 
 1. One-time installs: `../kafkaservice/scripts/setup-kafka.sh`, `../elasticsearchservice/scripts/setup-elasticsearch.sh`
